@@ -127,11 +127,14 @@ char* StrList_firstData(const StrList* StrList) {
 
 void StrList_print(const StrList* StrList) {
     const Node* p= StrList->_head;
-    while(p->_next!=NULL) {
-        printf("%s ",p->_data);
+    if(p!=NULL){
+        printf("%s",p->_data);
         p= p->_next;
     }
-    printf("%s",p->_data);
+    while(p) {
+        printf(" %s",p->_data);
+        p= p->_next;
+    }
 
 }
 /* Return the amount of chars in the list.*/
