@@ -127,11 +127,11 @@ char* StrList_firstData(const StrList* StrList) {
 
 void StrList_print(const StrList* StrList) {
     const Node* p= StrList->_head;
-    while(p) {
+    while(p->_next!=NULL) {
         printf("%s ",p->_data);
         p= p->_next;
     }
-    
+    printf("%s",p->_data);
 
 }
 /* Return the amount of chars in the list.*/
@@ -256,7 +256,7 @@ void StrList_removeAt(StrList* StrList, int index)
 
 
 int StrList_isEqual(const StrList* StrList1, const StrList* StrList2) {
-     const int eq = 0;
+    const int eq = 0;
     const int neq = 1;
     if(StrList1==NULL&&StrList2==NULL)
     {   

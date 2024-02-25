@@ -16,25 +16,31 @@ int main() {
     int count = 0;
     int y=0;
     int x=0;
+     
+   
+    
     do{
       scanf("%d", &choose);
 
     switch (choose) {
         case 1:
+        
             scanf("%d", &howmuchworld);
             for (int i = 0; i < howmuchworld; i++) {
-                char* userInput = malloc(sizeof(char) * 100);
+                char* userInput = malloc(sizeof(char) * 1000);
                 scanf("%s\n", userInput);
                 if (userInput != NULL) {
                     StrList_insertLast(p, userInput);
                     free(userInput);
                 }
+                
             }
+           
             break;
 
         case 2:
             scanf("%d", &in);
-            stri = malloc(sizeof(char) * 100);
+            stri = malloc(sizeof(char) * 1000);
             if(stri!=NULL){
                 scanf("%s", stri);
                 StrList_insertAt(p, stri, in);
@@ -67,7 +73,7 @@ int main() {
             break;
 
         case 7:
-            strin = malloc(sizeof(char) * 100);
+            strin = malloc(sizeof(char) * 1000);
             scanf("%s", strin);
             if (strin != NULL) {
                 count = StrList_count(p, strin);
@@ -78,7 +84,7 @@ int main() {
             break;
 
         case 8:
-            stir = malloc(sizeof(char) * 100);
+            stir = malloc(sizeof(char) * 1000);
             if (stir != NULL) {
                 scanf("%s", stir);
                 StrList_remove(p, stir);
